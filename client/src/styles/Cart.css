@@ -1,0 +1,876 @@
+/* CART PAGE LAYOUT */
+.cart-page {
+  background-color: #f8f9fa;
+  min-height: 90vh;
+  padding: 40px 20px;
+}
+
+.cart-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #2d3436;
+}
+
+.cart-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+/* LEFT: ITEMS */
+.cart-items {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child { border-bottom: none; }
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.item-details { flex: 1; margin-left: 20px; }
+.item-details h4 { margin: 0 0 5px 0; font-size: 1rem; }
+.item-price { color: #6c5ce7; font-weight: bold; }
+
+.item-actions { display: flex; align-items: center; gap: 10px; }
+.item-actions button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #eee;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.item-actions .delete-btn { color: #ff7675; border-color: #ff7675; }
+
+/* RIGHT: SUMMARY */
+.cart-summary {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  height: fit-content;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cart-summary h3 { margin-top: 0; }
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #636e72;
+}
+
+.summary-row.total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2d3436;
+  margin-top: 10px;
+}
+
+.points-preview {
+  background: #fffce1;
+  padding: 10px;
+  border-radius: 8px;
+  color: #f39c12;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 15px;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.checkout-btn:hover { background: #5649c0; }
+
+/* --- 🔥 SUGGESTIONS SECTION 🔥 --- */
+.suggestions-section {
+  margin-top: 50px;
+}
+
+.suggestions-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.suggestions-grid {
+  display: flex;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  gap: 20px;
+  padding-bottom: 20px;
+  scrollbar-width: thin; /* Firefox */
+}
+
+/* Custom Scrollbar */
+.suggestions-grid::-webkit-scrollbar { height: 8px; }
+.suggestions-grid::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+
+.suggestion-card {
+  min-width: 160px; /* Fixed width for consistent look */
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+  text-align: center;
+}
+
+.suggestion-card:hover { transform: translateY(-5px); }
+
+.suggestion-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.suggestion-info h5 {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.suggestion-info p {
+  font-weight: bold;
+  color: #6c5ce7;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.suggestion-info button {
+  width: 100%;
+  padding: 8px;
+  background: #00b894;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.suggestion-info button:hover { background: #00a884; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .cart-content { grid-template-columns: 1fr; }
+}
+
+
+/* --- EMPTY CART STATE --- */
+.empty-cart-state {
+  text-align: center;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+
+.empty-cart-state h2 {
+  margin: 10px 0;
+  color: #2d3436;
+}
+
+.empty-cart-state p {
+  color: #636e72;
+  margin-bottom: 20px;
+}
+
+.start-shopping-btn {
+  padding: 12px 30px;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.start-shopping-btn:hover {
+  transform: scale(1.05);
+  background: #5649c0;
+}
+
+/* Dark Mode for Empty State */
+body.dark-mode .empty-cart-state {
+  background: #2d3436;
+  color: #dfe6e9;
+}
+
+body.dark-mode .empty-cart-state h2 {
+  color: white;
+}
+
+/* --- CART SUMMARY BOX --- */
+.cart-summary {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  height: fit-content;
+  border: 1px solid #eee;
+}
+
+/* Dark Mode Summary */
+.dark-mode .cart-summary {
+  background-color: #262626; /* Dark Grey */
+  color: white;
+  border-color: #444;
+}
+
+/* --- PAY NOW / CHECKOUT BUTTON --- */
+.checkout-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #6c5ce7, #a29bfe); /* Purple Gradient */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+}
+
+.checkout-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Text Colors in Dark Mode */
+.dark-mode .summary-row span,
+.dark-mode .summary-total span {
+  color: #e0e0e0;
+}
+
+/* --- POPULAR ITEMS SECTION (Empty Cart) --- */
+.popular-items-section {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.popular-items-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.popular-grid {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto; /* Allow horizontal scroll if many items */
+  padding-bottom: 20px;
+}
+
+.popular-card {
+  min-width: 180px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+  border: 1px solid #eee;
+}
+
+.popular-card:hover {
+  transform: translateY(-5px);
+}
+
+.popular-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.popular-card h4 {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popular-card .price {
+  font-weight: bold;
+  color: #2d3436;
+  margin-bottom: 10px;
+}
+
+.add-btn {
+  background-color: #00b894;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.add-btn:hover {
+  background-color: #00a884;
+}
+
+/* DARK MODE FIX FOR POPULAR ITEMS */
+.dark-mode .popular-items-section h3 {
+  color: white;
+}
+.dark-mode .popular-card {
+  background-color: #2d2d2d;
+  border-color: #444;
+}
+.dark-mode .popular-card h4, 
+.dark-mode .popular-card .price {
+  color: #eee;
+}
+
+/* --- POPULAR ITEMS SECTION (Horizontal List View) --- */
+
+.popular-items-section {
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+.popular-items-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: #2d3436;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 20px auto; /* Centers title with the list */
+}
+
+/* 1. The List Container */
+.popular-grid {
+  display: flex;
+  flex-direction: column; /* List items stacked vertically */
+  gap: 15px;
+  max-width: 800px; /* Limits width so it looks like a list */
+  margin: 0 auto;
+}
+
+/* 2. The Horizontal Card */
+.popular-card {
+  display: flex; /* Makes it Horizontal */
+  align-items: center; /* Aligns everything in the middle vertically */
+  background: white;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border: 1px solid #f1f2f6;
+  transition: transform 0.2s ease;
+}
+
+.popular-card:hover {
+  transform: translateX(5px); /* Slide slightly right on hover */
+  box-shadow: 0 5px 15px rgba(108, 92, 231, 0.1);
+}
+
+/* 3. Left: Image */
+.popular-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+/* 4. Middle: Details (Name & Desc) */
+.popular-details {
+  flex: 1; /* Takes up all available middle space */
+  text-align: left;
+}
+
+.popular-details h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0 0 5px 0;
+}
+
+.popular-desc {
+  font-size: 0.85rem;
+  color: #636e72;
+  margin: 0;
+  line-height: 1.4;
+  /* Limit to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 5. Right: Price & Button */
+.popular-actions {
+  display: flex;
+  flex-direction: column; /* Stack Price and Button */
+  align-items: flex-end; /* Align to the right side */
+  gap: 8px;
+  min-width: 100px;
+}
+
+.popular-card .price {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #2d3436;
+}
+
+.add-btn {
+  background-color: #00b894;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.add-btn:hover {
+  background-color: #00a884;
+}
+
+/* --- DARK MODE FIXES --- */
+.dark-mode .popular-items-section h3 {
+  color: #dfe6e9;
+}
+.dark-mode .popular-card {
+  background-color: #2d2d2d;
+  border-color: #444;
+}
+.dark-mode .popular-details h4,
+.dark-mode .popular-card .price {
+  color: #eee;
+}
+.dark-mode .popular-desc {
+  color: #b2bec3;
+}
+
+/* --- CART ITEMS (Professional Row Layout) --- */
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between each item row */
+  flex: 2; /* Takes up 2/3rds of the screen width */
+}
+
+/* The Row Card */
+.cart-item-card {
+  display: flex; /* Horizontal Layout */
+  align-items: center; /* Vertically center everything */
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.2s;
+  position: relative; /* For positioning remove button */
+}
+
+.cart-item-card:hover {
+  transform: translateX(5px); /* Slight hover effect */
+  border-color: #6c5ce7; /* Highlights border purple */
+}
+
+/* 1. Image (Small & Square) */
+.cart-item-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain; /* Keeps image sharp inside the box */
+  margin-right: 20px;
+  background-color: #f8f9fa; /* Light grey bg for image box */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* 2. Details (Name & Price) */
+.cart-item-details {
+  flex: 1; /* Takes up all the middle space */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cart-item-details h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0;
+}
+
+.item-price {
+  font-size: 1rem;
+  color: #6c5ce7; /* Purple Price */
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 3. Quantity Controls (Rounded Buttons) */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  background-color: #f1f2f6;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin-right: 20px;
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  color: #2d3436;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.2s;
+}
+
+.quantity-controls button:hover {
+  background-color: #6c5ce7;
+  color: white;
+}
+
+.quantity-controls span {
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #2d3436;
+}
+
+/* 4. Remove Button (Trash Icon) */
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ff7675; /* Soft Red */
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.2s;
+}
+
+.remove-btn:hover {
+  color: #d63031; /* Dark Red */
+  background-color: #fff0f0;
+  border-radius: 50%;
+}
+
+/* --- DARK MODE FIXES --- */
+.dark-mode .cart-item-card {
+  background-color: #2d2d2d;
+  border-color: #444;
+}
+
+.dark-mode .cart-item-img {
+  background-color: #363636;
+}
+
+.dark-mode .cart-item-details h4,
+.dark-mode .quantity-controls span {
+  color: #eee;
+}
+
+.dark-mode .quantity-controls {
+  background-color: #363636;
+}
+
+.dark-mode .quantity-controls button {
+  background-color: #444;
+  color: white;
+}
+
+/* --- LAYOUT WRAPPER --- */
+.cart-page-wrapper {
+  display: flex;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f1f3f6; /* Flipkart Light Grey BG */
+  min-height: 100vh;
+}
+
+/* --- LEFT COLUMN --- */
+.cart-left-section {
+  flex: 2.2; /* Takes up ~70% of width */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* --- RIGHT COLUMN --- */
+.cart-right-section {
+  flex: 1; /* Takes up ~30% width */
+  position: sticky;
+  top: 90px;
+  height: fit-content;
+}
+
+/* --- CART ITEM CARD (Flipkart Style) --- */
+.fk-cart-card {
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Stack Top (Info) and Bottom (Specs) */
+  gap: 20px;
+}
+
+.fk-card-top {
+  display: flex;
+  gap: 20px;
+}
+
+/* Image Box & Qty */
+.fk-image-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.fk-image-box img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.qty-controls button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #c2c2c2;
+  background: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.qty-controls input {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #c2c2c2;
+  padding: 4px;
+}
+
+/* Details Box */
+.fk-details-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fk-title-row h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #212121;
+  margin: 0 0 5px 0;
+}
+
+.delivery-date {
+  font-size: 0.8rem;
+  color: #212121;
+}
+.free { color: #388e3c; }
+
+.fk-price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.price-new { font-size: 1.2rem; font-weight: 600; color: #212121; }
+.price-old { text-decoration: line-through; color: #878787; font-size: 0.9rem; }
+.discount { color: #388e3c; font-weight: 500; font-size: 0.9rem; }
+
+.fk-actions-row {
+  display: flex;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.action-btn {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #212121;
+  cursor: pointer;
+}
+.action-btn:hover { color: #2874f0; }
+
+/* --- DESCRIPTION & SPECS (Requested Feature) --- */
+.fk-extra-details {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+}
+
+.fk-extra-details h4 {
+  font-size: 0.9rem;
+  color: #878787;
+  margin: 10px 0 5px 0;
+  text-transform: uppercase;
+}
+
+.fk-extra-details p {
+  font-size: 0.9rem;
+  color: #212121;
+  line-height: 1.4;
+}
+
+.fk-specs-list {
+  list-style: none;
+  padding: 0;
+}
+.fk-specs-list li {
+  font-size: 0.85rem;
+  color: #212121;
+  margin-bottom: 4px;
+}
+
+/* --- PRICE SIDEBAR --- */
+.price-details-card {
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.price-header {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #878787;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  font-size: 1rem;
+}
+
+.green-text { color: #388e3c; }
+
+.total-amount-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 20px 0;
+  border-top: 1px dashed #e0e0e0;
+  border-bottom: 1px dashed #e0e0e0;
+  padding: 15px 0;
+}
+
+.place-order-btn {
+  width: 100%;
+  background-color: #fb641b; /* Flipkart Orange */
+  color: white;
+  border: none;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- SUGGESTIONS & RECENTLY VIEWED --- */
+.suggestions-section {
+  background: white;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.suggestions-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.suggestions-grid {
+  display: flex;
+  gap: 15px;
+}
+
+.suggestion-card {
+  width: 150px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  padding: 10px;
+}
+
+.suggestion-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* --- DARK MODE --- */
+.dark-mode .cart-page-wrapper { background-color: #121212; }
+.dark-mode .fk-cart-card, .dark-mode .price-details-card, .dark-mode .suggestions-section {
+  background-color: #262626;
+  color: white;
+}
+.dark-mode .fk-title-row h3, .dark-mode .price-new, .dark-mode .fk-extra-details p { color: white; }
+.dark-mode .price-old { color: #aaa; }
+.dark-mode .action-btn { color: #ccc; }

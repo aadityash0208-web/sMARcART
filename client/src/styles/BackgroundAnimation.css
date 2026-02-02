@@ -1,0 +1,106 @@
+/* --- CONTAINER --- */
+.background-container {
+    position: fixed; /* Stays fixed while you scroll */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Puts it BEHIND everything else */
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+  }
+  
+  /* Light Mode Background */
+  .light-bg {
+    background-color: #f8f9fa; /* Very light grey/white */
+  }
+  
+  /* Dark Mode Background */
+  .dark-bg {
+    background-color: #121212; /* Deep dark grey */
+  }
+  
+  /* --- THE GLOWING ORBS --- */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px); /* Makes them look like soft clouds */
+    opacity: 0.6;
+    animation: float 20s infinite alternate ease-in-out;
+  }
+  
+  /* Orb 1: Purple */
+  .orb-1 {
+    width: 50vw;
+    height: 50vw;
+    background: #6c5ce7;
+    top: -10%;
+    left: -10%;
+    animation-duration: 25s;
+  }
+  
+  /* Orb 2: Blue */
+  .orb-2 {
+    width: 40vw;
+    height: 40vw;
+    background: #0984e3;
+    bottom: -10%;
+    right: -10%;
+    animation-duration: 30s;
+    animation-delay: -5s;
+  }
+  
+  /* Orb 3: Pink (Accent) */
+  .orb-3 {
+    width: 30vw;
+    height: 30vw;
+    background: #e84393;
+    top: 40%;
+    left: 40%;
+    opacity: 0.4;
+    animation-duration: 35s;
+    animation-delay: -10s;
+  }
+  
+  /* --- DARK MODE ADJUSTMENTS --- */
+  /* In dark mode, make the orbs dimmer so they don't blind the user */
+  .dark-bg .orb {
+    opacity: 0.25; 
+    filter: blur(100px);
+  }
+  
+  /* --- ANIMATION KEYFRAMES --- */
+  @keyframes float {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(50px, 80px) scale(1.1);
+    }
+    66% {
+      transform: translate(-30px, 40px) scale(0.9);
+    }
+    100% {
+      transform: translate(20px, -20px) scale(1);
+    }
+  }
+  
+  /* --- OPTIONAL: SUBTLE GRID OVERLAY --- */
+  .grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+  }
+  
+  .dark-bg .grid-overlay {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }

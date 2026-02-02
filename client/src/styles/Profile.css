@@ -1,0 +1,317 @@
+/* --- PROFILE PAGE LAYOUT (FIXED) --- */
+.profile-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 80vh;
+}
+
+/* 🔥 CRITICAL FIX: Forces Side-by-Side Layout 🔥 */
+.dashboard-layout {
+  display: flex;           /* This aligns them horizontally */
+  gap: 30px;               /* Space between sidebar and content */
+  align-items: flex-start; /* Aligns them at the top */
+  position: relative;
+}
+
+/* --- SIDEBAR STYLES --- */
+.dashboard-sidebar {
+  width: 280px;            /* Fixed width for sidebar */
+  flex-shrink: 0;          /* Prevents sidebar from getting squished */
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  overflow: hidden;
+  padding: 20px 0;
+  height: fit-content;
+}
+
+.dashboard-sidebar h3 {
+  padding: 0 25px 15px;
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2d3436;
+  border-bottom: 1px solid #f1f2f6;
+  margin-bottom: 10px;
+}
+
+.dashboard-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-sidebar li {
+  padding: 15px 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #636e72;
+  font-weight: 500;
+  transition: all 0.2s;
+  border-left: 4px solid transparent;
+}
+
+.dashboard-sidebar li i {
+  width: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.dashboard-sidebar li:hover {
+  background: #f8f9fa;
+  color: #6c5ce7;
+}
+
+.dashboard-sidebar li.active {
+  background: #f0f3ff;
+  color: #6c5ce7;
+  border-left-color: #6c5ce7;
+}
+
+/* Logout Item */
+.dashboard-sidebar li.logout-item {
+  margin-top: 10px;
+  border-top: 1px solid #f1f2f6;
+  color: #ff7675;
+}
+
+.dashboard-sidebar li.logout-item:hover {
+  background: #fff5f5;
+  color: #d63031;
+}
+
+/* --- MAIN CONTENT AREA --- */
+.dashboard-content {
+  flex: 1; /* Takes up all remaining space */
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  padding: 40px;
+  min-height: 500px; /* Ensures it looks good even if empty */
+}
+
+/* --- PROFILE VIEW STYLES --- */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #f1f2f6;
+  margin-bottom: 30px;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  background: #6c5ce7;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.profile-info h2 {
+  margin: 0 0 5px 0;
+  color: #2d3436;
+}
+
+.profile-info p {
+  color: #636e72;
+  margin: 0 0 10px 0;
+}
+
+.badge.pro {
+  background: #00b894;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.profile-details {
+  display: grid;
+  gap: 25px;
+}
+
+.detail-item label {
+  display: block;
+  font-size: 0.9rem;
+  color: #b2bec3;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.detail-item p {
+  font-size: 1.1rem;
+  color: #2d3436;
+  font-weight: 500;
+  margin: 0;
+}
+
+.edit-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  width: fit-content;
+}
+
+/* --- POINTS VIEW --- */
+.points-balance-card {
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+  color: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 20px;
+  box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+}
+
+.coin-spin {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  animation: spin 3s infinite linear;
+}
+
+/* --- 🔵 ORDERS SECTION (Blue Theme) --- */
+.order-card {
+  border-left: 5px solid #0984e3;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.order-header i {
+  color: #0984e3;
+}
+
+.order-status.delivered {
+  background: #e1f5fe;
+  color: #0984e3;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* --- 🌸 COUPONS SECTION (Pink Theme) --- */
+.coupon-ticket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(232, 67, 147, 0.03);
+  border: 2px dashed #e84393;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.coupon-ticket:hover {
+  transform: scale(1.02);
+  background: rgba(232, 67, 147, 0.08);
+}
+
+.coupon-left h4 {
+  font-size: 1.4rem;
+  color: #e84393;
+  margin: 0 0 5px 0;
+  letter-spacing: 1px;
+}
+
+.coupon-icon {
+  font-size: 2.5rem;
+  color: #e84393;
+  opacity: 0.8;
+}
+
+/* --- 🟡🔵 GIFT CARDS (Gradient Theme) --- */
+.gift-card-box {
+  background: linear-gradient(135deg, #f1c40f 0%, #0984e3 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(9, 132, 227, 0.3);
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.gift-card-box:hover {
+  transform: translateY(-5px);
+}
+
+.gift-card-box i {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: white;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+}
+
+/* --- DARK MODE SETTINGS --- */
+body.dark-mode .dashboard-sidebar,
+body.dark-mode .dashboard-content {
+  background: #2d3436;
+  border: 1px solid #444;
+  color: #dfe6e9;
+}
+
+body.dark-mode .dashboard-sidebar h3 {
+  color: #dfe6e9;
+  border-bottom-color: #444;
+}
+
+body.dark-mode .dashboard-sidebar li {
+  color: #b2bec3;
+}
+
+body.dark-mode .dashboard-sidebar li:hover {
+  background: #353b48;
+  color: #a29bfe;
+}
+
+body.dark-mode .profile-info h2 { color: white; }
+body.dark-mode .profile-info p { color: #b2bec3; }
+
+body.dark-mode .detail-item label { color: #636e72; }
+body.dark-mode .detail-item p { color: #dfe6e9; }
+
+body.dark-mode .order-card {
+  background: #353b48;
+  color: #dfe6e9;
+  border-left-color: #0984e3;
+}
+
+body.dark-mode .coupon-ticket {
+  background: #2d3436;
+  border-color: #e84393;
+}
+body.dark-mode .coupon-left h4 { color: #e84393; }
+
+/* RESPONSIVE (Mobile) */
+@media (max-width: 768px) {
+  .dashboard-layout {
+    flex-direction: column; /* Stack vertically on mobile */
+  }
+  .dashboard-sidebar {
+    width: 100%;
+  }
+}

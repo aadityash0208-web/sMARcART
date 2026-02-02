@@ -1,0 +1,314 @@
+.details-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* --- TOP SECTION --- */
+.details-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.details-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.details-image img:hover {
+  transform: scale(1.02);
+}
+
+.details-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #2d3436;
+}
+
+.details-category {
+  color: #6c5ce7;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.details-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.rating-badge {
+  background: #00b894;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.review-count { color: #b2bec3; font-size: 0.9rem; }
+
+/* PRICE */
+.details-price-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.details-price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2d3436;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #b2bec3;
+  font-size: 1.2rem;
+}
+
+.discount-tag {
+  color: #d63031;
+  background: #ffeaa7;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.short-desc {
+  color: #636e72;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* --- ACTION BUTTONS (ANIMATED) --- */
+.details-actions {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+  margin-bottom: 30px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 18px; /* Bigger Size */
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+}
+
+/* ADD TO CART */
+.cart-btn {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: white;
+  box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+}
+
+.cart-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(108, 92, 231, 0.6);
+}
+
+/* WISHLIST */
+.wishlist-btn {
+  background: white;
+  border: 2px solid #dfe6e9;
+  color: #2d3436;
+}
+
+.wishlist-btn:hover {
+  border-color: #ff7675;
+  color: #ff7675;
+  transform: translateY(-3px);
+}
+
+.wishlist-btn.active {
+  background: #ff7675;
+  color: white;
+  border-color: #ff7675;
+}
+
+/* DELIVERY */
+.delivery-info p {
+  margin: 5px 0;
+  color: #00b894;
+  font-weight: 600;
+}
+
+/* --- TABS SECTION --- */
+.details-tabs-section {
+  margin-bottom: 60px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.tabs-header {
+  border-bottom: 2px solid #f1f2f6;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 15px 30px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #b2bec3;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-btn.active {
+  color: #6c5ce7;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #6c5ce7;
+}
+
+.tab-content {
+  color: #636e72;
+  line-height: 1.6;
+}
+
+.specs-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.specs-content td {
+  padding: 12px;
+  border-bottom: 1px solid #f1f2f6;
+}
+
+.specs-content tr:last-child td { border: none; }
+.specs-content td:first-child { font-weight: bold; width: 30%; color: #2d3436; }
+
+/* --- RECOMMENDATIONS --- */
+.recommendations-section {
+  margin-bottom: 50px;
+}
+
+.recommendations-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.rec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.rec-card {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.rec-card:hover { transform: translateY(-5px); }
+
+.rec-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.rec-info { margin-top: 10px; }
+.rec-info h5 { margin: 0; font-size: 0.95rem; }
+.rec-info p { margin: 5px 0 0; color: #6c5ce7; font-weight: bold; }
+
+/* ANIMATIONS */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeIn 0.5s ease-out; }
+.fade-in-left { animation: fadeIn 0.5s ease-out; }
+.fade-in-right { animation: fadeIn 0.5s ease-out; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .details-wrapper { grid-template-columns: 1fr; }
+  .details-image img { height: 350px; }
+  .details-actions { flex-direction: column; }
+}
+
+/* --- DARK MODE SETTINGS FOR PRODUCT PAGE --- */
+
+/* 1. TABS SECTION (Description & Specs) */
+body.dark-mode .details-tabs-section {
+  background: #2d3436;       /* Dark Grey Background */
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  color: #dfe6e9;            /* Light Grey Text */
+}
+
+body.dark-mode .tab-btn {
+  color: #b2bec3;            /* Dimmed Text for inactive tabs */
+}
+
+body.dark-mode .tab-btn.active {
+  color: #a29bfe;            /* Light Purple for Active Tab */
+}
+
+body.dark-mode .tab-btn.active::after {
+  background: #a29bfe;       /* Light Purple Underline */
+}
+
+body.dark-mode .specs-content td {
+  border-bottom-color: #444; /* Darker border lines in table */
+  color: #dfe6e9;
+}
+
+body.dark-mode .specs-content td:first-child {
+  color: #a29bfe;            /* Highlight Label Column */
+}
+
+/* 2. HEADINGS (Similar Products / Recently Viewed) */
+body.dark-mode .recommendations-section h3 {
+  color: #dfe6e9;            /* White/Grey Title */
+}
+
+/* 3. SIMILAR & RECENT CARDS */
+body.dark-mode .rec-card {
+  background: #2d3436;       /* Dark Card Background */
+  border: 1px solid #444;    /* Subtle Border */
+}
+
+body.dark-mode .rec-info h5 {
+  color: #dfe6e9;            /* White Product Name */
+}
+
+body.dark-mode .rec-info p {
+  color: #f1c40f;            /* Gold Price for high visibility */
+}
+
+body.dark-mode .rec-card:hover {
+  background: #353b48;       /* Slightly lighter on hover */
+}

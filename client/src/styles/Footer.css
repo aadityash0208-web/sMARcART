@@ -1,0 +1,133 @@
+.footer {
+  background-color: #2d3436;
+  color: #b2bec3;
+  padding: 70px 0 0;
+  margin-top: auto; /* Pushes footer to bottom if page is short */
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-col h3 {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-col h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #6c5ce7; /* Your Brand Purple */
+  height: 2px;
+  width: 50px;
+}
+
+.footer-col p {
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* Links */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #b2bec3;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #6c5ce7;
+  padding-left: 5px;
+}
+
+/* Contact List Icons */
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.contact-list i {
+  color: #6c5ce7;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border-radius: 50%;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #6c5ce7;
+  transform: translateY(-3px);
+}
+
+/* Newsletter */
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+}
+
+.newsletter-form button {
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #5a4ad1;
+}
+
+/* Bottom Copyright */
+.footer-bottom {
+  background: #222;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}

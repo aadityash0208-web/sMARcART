@@ -1,0 +1,186 @@
+/* 1. TILT WRAPPER */
+.tilt-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- COMPACT PRODUCT CARD --- */
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%; /* Ensure uniform height */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.2);
+}
+
+/* IMAGE */
+.product-card img {
+  width: 100%;
+  height: 140px; /* 👇 CHANGE: Reduced height (was ~200px) */
+  object-fit: cover;
+  border-bottom: 1px solid #f1f2f6;
+}
+
+/* DETAILS CONTAINER */
+.product-details {
+  padding: 10px; /* 👇 CHANGE: Less padding */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* CATEGORY TAG */
+.product-category {
+  font-size: 0.7rem;
+  color: #b2bec3;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* TITLE */
+.product-title {
+  font-size: 0.95rem; /* 👇 CHANGE: Smaller font */
+  font-weight: 600;
+  color: #2d3436;
+  margin: 0 0 5px 0;
+  line-height: 1.3;
+  
+  /* Limit to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* PRICE & RATING ROW */
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Pushes this to the bottom */
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #6c5ce7;
+}
+
+.product-rating {
+  font-size: 0.75rem;
+  background: #ffeaa7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #d35400;
+  font-weight: bold;
+}
+
+/* ADD TO CART BUTTON */
+.add-btn {
+  width: 100%;
+  padding: 8px; /* 👇 CHANGE: Smaller button */
+  background: #2d3436;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.add-btn:hover {
+  background: #6c5ce7;
+}
+
+/* WISH LIST HEART (Optional absolute position) */
+.wishlist-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+  color: #ccc;
+  transition: 0.2s;
+}
+
+.wishlist-icon:hover {
+  color: #ff7675;
+  transform: scale(1.1);
+}
+
+/* --- DARK MODE OVERRIDES --- */
+body.dark-mode .product-card,
+body.dark-mode .card-details {
+  background-color: #2d2d2d !important;
+  border: 1px solid #444;
+}
+
+/* CRITICAL FIX: Make text white in dark mode */
+body.dark-mode .card-details h3 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .card-image-container {
+  background-color: #404040;
+}
+
+/* --- DARK MODE SETTINGS --- */
+body.dark-mode .product-card {
+  background: #2d3436;       /* Dark Card Background */
+  border: 1px solid #444;    /* Subtle Border */
+}
+
+body.dark-mode .product-title {
+  color: #dfe6e9;            /* White/Grey Text */
+}
+
+body.dark-mode .product-category {
+  color: #b2bec3;            /* Softer Grey for Category */
+}
+
+/* 🔥 NEW: Ratings in Night Mode 🔥 */
+body.dark-mode .product-rating {
+  background: #353b48;       /* Darker Grey Box */
+  color: #f1c40f;            /* Bright Gold Star & Text */
+  border: 1px solid #f1c40f; /* Gold Border for visibility */
+}
+
+body.dark-mode .product-price {
+  color: #a29bfe;            /* Light Purple Price */
+}
+
+body.dark-mode .add-btn {
+  background: #6c5ce7;       /* Purple Button */
+  color: white;
+}
+
+body.dark-mode .add-btn:hover {
+  background: #5649c0;
+}
+.dark-mode .product-card, 
+.dark-mode .item-card, 
+.dark-mode .card {
+    background-color: #262626 !important;
+    color: white !important;
+}

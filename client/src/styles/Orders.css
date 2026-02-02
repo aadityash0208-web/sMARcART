@@ -1,0 +1,121 @@
+.orders-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.orders-page h1 {
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+.loading-screen {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.no-orders {
+  text-align: center;
+  padding: 50px;
+}
+.no-orders img {
+  width: 120px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+.start-shopping-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #6c5ce7;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* Order Card */
+.order-card {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.order-id {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+  display: block;
+}
+.order-date {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.status-processing {
+  background: #fff3cd;
+  color: #856404;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+.status-delivered {
+  background: #d4edda;
+  color: #155724;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.order-items-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-item-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.small-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border: 1px solid #eee;
+  border-radius: 6px;
+}
+.item-title {
+  font-size: 0.95rem;
+  color: #444;
+}
+.item-meta {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.order-footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.total-label { font-size: 1rem; color: #555; }
+.total-price { font-size: 1.3rem; font-weight: bold; color: #000; }

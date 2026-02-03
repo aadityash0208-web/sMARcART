@@ -1,11 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import './styles/CursorAnimation.css'; // ✅ ADD THIS
+
+// Styles
+import './styles/CursorAnimation.css';
+import './styles/App.css';
 
 // Components
 import Navbar from './components/Navbar';
 import BackgroundAnimation from './components/BackgroundAnimation';
+import Footer from './components/Footer';
+import Toast from './components/Toast';
 
+// Pages
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
@@ -13,27 +19,22 @@ import ProductDetails from './pages/ProductDetails';
 import Profile from './pages/Profile';
 import Checkout from './pages/Checkout';
 import Wishlist from './pages/Wishlist';
-import Footer from './components/Footer'; 
-import Toast from './components/Toast';
 import SmartPoints from './pages/SmartPoints';
 import Coupons from './pages/Coupons';
 import GiftCards from './pages/GiftCards';
+
 // Contexts
 import { CartProvider } from './contexts/CartContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { WishlistProvider } from './contexts/WishlistContext';
 import { NotificationProvider } from './contexts/NotificationContext';
-import { OrderProvider } from './contexts/OrderContext'; 
+import { OrderProvider } from './contexts/OrderContext';
 import { ToastProvider } from './contexts/ToastContext';
 import { SearchProvider } from './contexts/SearchContext';
-import { PointsProvider } from './contexts/PointsContext';
+import { PointsProvider } from './contexts/PointsContext'; 
 
-import './styles/App.css'; 
-
-// 🔥 NEW INNER COMPONENT FOR ANIMATION 🔥
-// Add this DIRECTLY inside App.js at the top
-// 👇 REPLACE THE OLD CURSOR COMPONENT WITH THIS NEW ONE
+// Custom Cursor Animation Component
 const CursorAnimation = () => {
   const dotRef = React.useRef(null);
   const iconRef = React.useRef(null); // Changed from ringRef to iconRef

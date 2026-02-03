@@ -10,9 +10,10 @@ app.use(cors());
 
 // --- DATABASE CONNECTION ---
 // FORCE the same database name 'smartcart'
-mongoose.connect('mongodb://localhost:27017/smartcart')
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/smartcart')
   .then(() => console.log('✅ MongoDB Connected to: smartcart'))
-  .catch(err => console.log(err));
+  .catch(err => console.error('❌ MongoDB Connection Error:', err));
+
 // --- PRODUCT LOGIC ---
 const productSchema = new mongoose.Schema({
   title: { type: String, required: true },
@@ -46,13 +47,12 @@ app.get('/api/products/:id', async (req, res) => {
 });
 
 // --- LOAD ROUTES ---
-// --- LOAD ROUTES ---
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/orders', require('./routes/orderRoutes'));
-app.use('/api/payment', require('./routes/paymentRoutes')); // <--- NEW LINE
+app.use('/api/payment', require('./routes/paymentRoutes'));
 
 // --- START SERVER ---
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });

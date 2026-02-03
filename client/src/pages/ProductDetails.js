@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+
+// Contexts
 import { useCart } from '../contexts/CartContext';
 import { useWishlist } from '../contexts/WishlistContext';
 import { useToast } from '../contexts/ToastContext';
+
+// Data
 import { products } from './products';
+
+// Styles
 import '../styles/ProductDetails.css';
 
 const ProductDetails = () => {
@@ -22,10 +28,6 @@ const ProductDetails = () => {
   const isLiked = isInWishlist(product.id);
   // Recommend items from the same category
   const similarProducts = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
-
-<button className="action-btn cart-btn" onClick={() => {addToCart(product); showToast(`Added to Cart!`, 'success');}}>
-<i className="fas fa-shopping-bag"></i> Add to Cart
-</button>
 
   const renderSpecs = () => {
     return (

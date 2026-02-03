@@ -3,9 +3,9 @@ const router = express.Router();
 const Razorpay = require('razorpay');
 const crypto = require('crypto');
 
-// --- HARDCODE YOUR KEYS HERE FOR TESTING ---
-const KEY_ID = "rzp_test_S7xQc1NW5KiExe";      // <-- Paste Key ID here
-const KEY_SECRET = "wXAlfbw8fWJCu9pMGBt7YlLH";       // <-- Paste Key Secret here
+// Use environment variables for Razorpay credentials
+const KEY_ID = process.env.RAZORPAY_KEY_ID || "rzp_test_S7xQc1NW5KiExe";
+const KEY_SECRET = process.env.RAZORPAY_KEY_SECRET || "wXAlfbw8fWJCu9pMGBt7YlLH";
 
 // Initialize Razorpay
 const razorpay = new Razorpay({
@@ -25,7 +25,7 @@ router.post('/orders', async (req, res) => {
     const order = await razorpay.orders.create(options);
     res.json(order);
   } catch (error) {
-    console.log("Razorpay Error:", error);
+    console.error("Razorpay Error:", error);
     res.status(500).send(error);
   }
 });
@@ -47,6 +47,7 @@ router.post('/verify', async (req, res) => {
       res.status(400).json({ message: "Invalid Signature", success: false });
     }
   } catch (error) {
+    console.error("Payment verification error:", error);
     res.status(500).send("Error verifying payment");
   }
 });

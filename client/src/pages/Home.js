@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
+
+// Components
 import ProductCard from '../components/ProductCard';
-import { useSearch } from '../contexts/SearchContext'; 
+
+// Contexts
+import { useSearch } from '../contexts/SearchContext';
+
+// Data
 import { products } from './products';
+
+// Styles
 import '../styles/Home.css';
 
 const Home = () => {

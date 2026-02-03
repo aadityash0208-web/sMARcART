@@ -16,8 +16,6 @@ const Navbar = () => {
   // --- STATE ---
   const [showDropdown, setShowDropdown] = useState(false);
   const [recentSearches, setRecentSearches] = useState([]);
-  
-  // Dropdown States
   const [showUserDropdown, setShowUserDropdown] = useState(false);
   const [showNotiDropdown, setShowNotiDropdown] = useState(false);
 
@@ -54,26 +52,26 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${isDarkMode ? 'dark-nav' : ''}`}>
-      {/* 1. LOGO */}
+      {/* ZONE 1: Brand Identity (Left) - Never Shrink */}
       <div className="navbar-brand" onClick={() => navigate('/')}>
         <i className="fas fa-shopping-cart logo-icon"></i>
         <span className="logo-text">SmartCart</span>
       </div>
 
-      {/* 2. SEARCH BAR */}
+      {/* ZONE 2: Search Core (Center) - Flexible Space */}
       <div className="search-container">
         <div className="search-wrapper">
-          <i className="fas fa-search search-icon"></i>
           <input 
             type="text" 
             className="search-input"
-            placeholder="Search products..."
+            placeholder="Search..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyDown={handleSearchSubmit}
             onFocus={() => setShowDropdown(true)}
             onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
           />
+          <i className="fas fa-search search-icon"></i>
         </div>
 
         {showDropdown && recentSearches.length > 0 && (
@@ -95,7 +93,7 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* 3. ACTIONS */}
+      {/* ZONE 3: User Actions (Right) - Never Shrink */}
       <div className="navbar-actions">
         <Link to="/wishlist" className="icon-btn wishlist-icon-btn"><i className="fas fa-heart"></i></Link>
 

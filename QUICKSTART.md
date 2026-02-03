@@ -35,6 +35,17 @@ This starts:
 - **Backend:** http://localhost:5000
 - **Frontend:** http://localhost:3000
 
+## 🌐 **Production Deployment**
+
+### **Live URLs (After Deployment)**
+- **Backend:** https://smarcart-api.onrender.com
+- **Frontend:** https://your-vercel-app.vercel.app
+
+### **Deployment Notes**
+- Backend deployed on Render with MongoDB Atlas
+- Frontend configured to use live API endpoints
+- Local development still uses localhost URLs
+
 ## 📋 What's Included
 
 ✅ **Backend (MVC Pattern)**
@@ -67,12 +78,13 @@ This starts:
 
 **Port Already in Use:**
 - Change `PORT` in `server/.env`
-- Update `REACT_APP_API_URL` in frontend if needed
+- The frontend now uses direct API calls (no proxy needed)
 
 **Products Not Showing:**
 - Run `npm run seed` to populate initial products
 - Check backend is running on port 5000
 - Check browser console for API errors
+- Verify API calls to https://smarcart-api.onrender.com
 
 ## 📝 Next Steps
 

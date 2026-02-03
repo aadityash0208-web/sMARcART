@@ -1,3 +1,10 @@
+# ### MERN & OS FIXES (Added for your project) ###
+.DS_Store
+/client/build
+/client/dist
+.vercel
+/server/dist
+
 # Logs
 logs
 *.log

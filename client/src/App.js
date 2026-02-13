@@ -15,6 +15,7 @@ import Toast from './components/Toast';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import ProductDetails from './pages/ProductDetails';
 import Profile from './pages/Profile';
 import Checkout from './pages/Checkout';
@@ -104,6 +105,7 @@ const AppContent = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/smart-points" element={<SmartPoints />} />

@@ -17,7 +17,10 @@ const Register = () => {
       await register(name, email, password);
       navigate('/'); // Redirect to home after signup
     } catch (err) {
-      setError('Failed to create an account. Email might be taken.');
+      console.error("Registration Error:", err);
+      // Show actual error message from server
+      const errorMessage = err.response?.data?.message || err.message || 'Failed to create an account. Please try again.';
+      setError(errorMessage);
     }
   };
 

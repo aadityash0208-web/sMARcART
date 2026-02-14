@@ -10,7 +10,9 @@ const app = express();
 // Enable CORS for all origins (prevents deployment errors)
 app.use(cors({
   origin: '*', // Allow all origins for deployment
-  credentials: true // Allow credentials
+  credentials: true, // Allow credentials
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Explicit methods
+  allowedHeaders: ['Content-Type', 'Authorization'] // Explicit headers
 }));
 
 // Parse incoming JSON data
@@ -46,8 +48,7 @@ app.get('/', (req, res) => {
 
 // --- API ROUTES ---
 // Import and use available routes
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/auth', require('./routes/auth')); // Contains login & register
 app.use('/api/orders', require('./routes/orderRoutes'));
 app.use('/api/payment', require('./routes/paymentRoutes'));
 app.use('/api/products', require('./routes/product'));

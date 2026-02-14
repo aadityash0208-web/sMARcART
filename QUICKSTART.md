@@ -38,7 +38,7 @@ This starts:
 ## 🌐 **Production Deployment**
 
 ### **Live URLs (After Deployment)**
-- **Backend:** https://smarcart-api.onrender.com
+- **Backend:** https://smarcart.onrender.com
 - **Frontend:** https://your-vercel-app.vercel.app
 
 ### **Deployment Notes**

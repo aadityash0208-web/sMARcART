@@ -34,31 +34,26 @@
     display: flex;
     align-items: center;
     min-width: fit-content;  /* Ensure content fits */
+    flex-grow: 0;           /* Don't grow, keep compact */
   }
   
   .logo-icon {
-    font-size: 1.5rem;      /* Smaller but visible */
+    font-size: 1.4rem;      /* Slightly smaller but visible */
     color: #6c5ce7;
   }
   
   .logo-text {
-    display: none;          /* Hide text on mobile to save space */
-  }
-  
-  /* Show logo only on screens > 380px */
-  @media (min-width: 380px) {
-    .logo-text {
-      display: block;
-      font-size: 1.2rem;
-      margin-left: 4px;
-    }
+    display: block;         /* Show text on mobile */
+    font-size: 1rem;        /* Smaller font for mobile */
+    margin-left: 6px;        /* Small gap between icon and text */
+    white-space: nowrap;     /* Prevent text wrapping */
   }
   
   /* ZONE 2: Search Core (Center) - Flexible Space */
   .search-container {
     flex-grow: 1;           /* Take all remaining space */
-    min-width: 120px;       /* Minimum usable width */
-    margin: 0 8px;          /* Tight spacing between zones */
+    min-width: 100px;       /* Reduced minimum width for more logo space */
+    margin: 0 6px;          /* Reduced margin between zones */
     position: relative;
   }
   

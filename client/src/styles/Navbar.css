@@ -305,7 +305,37 @@
     background-color: #636e72;
     color: #74b9ff;
   }
+}
+
+/* DESKTOP VIEW (>768px) */
+@media (min-width: 769px) {
+  /* Hide mobile elements on desktop */
+  .mobile-menu-toggle {
+    display: none;
+  }
   
+  .mobile-menu {
+    display: none;
+  }
+  
+  .mobile-menu-overlay {
+    display: none;
+  }
+  
+  /* Show desktop actions */
+  .desktop-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Hide mobile cart visible class (use regular cart) */
+  .mobile-cart-visible {
+    position: relative;
+    z-index: auto;
+  }
+}
+
   /* Hide text labels - show only icons */
   .user-chip span {
     display: none;

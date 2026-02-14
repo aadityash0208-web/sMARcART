@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'https://smarcart-api.onrender.com/api' });
+const API = axios.create({ baseURL: 'https://smarcart.onrender.com/api' });
 
 // Add Token to every request
 API.interceptors.request.use((req) => {

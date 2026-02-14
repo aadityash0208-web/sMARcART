@@ -7,7 +7,7 @@ import '../styles/Profile.css';
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState('profile');
-  const { logout } = useAuth();
+  const { user, logout } = useAuth();
   const { isDarkMode } = useTheme();
   const { showToast } = useToast();
   const navigate = useNavigate();
@@ -20,6 +20,12 @@ const Profile = () => {
     } catch {
       showToast('Failed to log out', 'error');
     }
+  };
+
+  // Get user initials for avatar
+  const getUserInitials = (name) => {
+    if (!name) return 'U';
+    return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
   };
 
   return (
@@ -38,17 +44,17 @@ const Profile = () => {
               <i className="fas fa-coins" style={{color: '#f1c40f'}}></i> Smart Points
             </li>
 
-            {/* 🔵 ORDERS (Blue) */}
+            {/* ORDERS (Blue) */}
             <li className={activeTab === 'orders' ? 'active' : ''} onClick={() => setActiveTab('orders')}>
               <i className="fas fa-box" style={{color: '#0984e3'}}></i> Orders
             </li>
             
-            {/* 🌸 COUPONS (Pink) */}
+            {/* COUPONS (Pink) */}
             <li className={activeTab === 'coupons' ? 'active' : ''} onClick={() => setActiveTab('coupons')}>
               <i className="fas fa-ticket-alt" style={{color: '#e84393'}}></i> Coupons
             </li>
 
-            {/* 🟡🔵 GIFT CARDS (Gradient) */}
+            {/* GIFT CARDS (Gradient) */}
             <li className={activeTab === 'giftcards' ? 'active' : ''} onClick={() => setActiveTab('giftcards')}>
               <i className="fas fa-gift" style={{
                   background: 'linear-gradient(135deg, #f1c40f 0%, #0984e3 100%)',
@@ -72,22 +78,26 @@ const Profile = () => {
             <div className="profile-view fade-in">
               <div className="profile-header">
                 <div className="profile-avatar">
-                  <span>AK</span>
+                  <span>{getUserInitials(user?.name)}</span>
                 </div>
                 <div className="profile-info">
-                  <h2>Aditya Kumar</h2>
-                  <p>aditya@example.com</p>
-                  <span className="badge pro">Pro Member</span>
+                  <h2>{user?.name || 'Hello, User'}</h2>
+                  <p>{user?.email || 'user@example.com'}</p>
+                  <span className="badge pro">SmartCart Member</span>
                 </div>
               </div>
               <div className="profile-details">
                 <div className="detail-item">
-                  <label>Phone</label>
-                  <p>+91 98765 43210</p>
+                  <label>Email</label>
+                  <p>{user?.email || 'user@example.com'}</p>
                 </div>
                 <div className="detail-item">
-                  <label>Address</label>
-                  <p>123, Cyber Street, Mumbai, India</p>
+                  <label>Account Status</label>
+                  <p>Active</p>
+                </div>
+                <div className="detail-item">
+                  <label>Member Since</label>
+                  <p>{new Date().toLocaleDateString()}</p>
                 </div>
                 <button className="edit-btn">Edit Profile</button>
               </div>

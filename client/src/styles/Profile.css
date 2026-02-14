@@ -308,10 +308,173 @@ body.dark-mode .coupon-left h4 { color: #e84393; }
 
 /* RESPONSIVE (Mobile) */
 @media (max-width: 768px) {
+  .profile-container {
+    padding: 20px 15px;
+    min-height: auto;
+  }
+  
   .dashboard-layout {
     flex-direction: column; /* Stack vertically on mobile */
+    gap: 20px;
   }
+  
+  /* Mobile sidebar */
   .dashboard-sidebar {
     width: 100%;
+    padding: 15px 0;
+  }
+  
+  .dashboard-sidebar h3 {
+    padding: 0 20px 10px;
+    font-size: 1.2rem;
+  }
+  
+  .dashboard-sidebar ul {
+    gap: 5px;
+  }
+  
+  .dashboard-sidebar li {
+    padding: 15px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .dashboard-sidebar li i {
+    font-size: 1rem;
+    margin-right: 12px;
+  }
+  
+  /* Mobile content area */
+  .dashboard-content {
+    width: 100%;
+  }
+  
+  /* Mobile profile view */
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+    margin: 0 auto;
+  }
+  
+  .profile-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .profile-info p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  .badge.pro {
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    margin-top: 10px;
+  }
+  
+  .profile-details {
+    padding: 20px;
+  }
+  
+  .detail-item {
+    margin-bottom: 20px;
+  }
+  
+  .detail-item label {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+  
+  .detail-item p {
+    font-size: 0.9rem;
+  }
+  
+  .edit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+  
+  /* Mobile points view */
+  .points-view h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .points-balance-card {
+    padding: 30px 20px;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+  
+  .points-balance-card h1 {
+    font-size: 2rem;
+    margin: 15px 0;
+  }
+  
+  /* Mobile orders view */
+  .orders-view h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .order-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .order-header h4 {
+    font-size: 1rem;
+  }
+  
+  .order-status {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+  
+  /* Mobile coupons view */
+  .coupons-view h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .coupon-ticket {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .coupon-left h4 {
+    font-size: 1.1rem;
+  }
+  
+  .coupon-left p {
+    font-size: 0.8rem;
+  }
+  
+  /* Mobile gift cards view */
+  .giftcards-view h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .gift-card-box {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .gift-card-box h3 {
+    font-size: 1.1rem;
+  }
+  
+  .gift-card-box p {
+    font-size: 0.9rem;
   }
 }
